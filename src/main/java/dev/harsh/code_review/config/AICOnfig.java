@@ -13,7 +13,7 @@ public class AICOnfig {
 
     @Bean
     public Client genaiclient(@Value("${google_api_key}") String apiKey){
-        return new Client(apiKey);
+        return new Client().builder().apiKey(apiKey).build();
     }
 
 

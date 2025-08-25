@@ -13,6 +13,7 @@ public class AICOnfig {
 
     @Bean
     public Client genaiclient(@Value("${google_api_key}") String apiKey){
+        if (apiKey == null) throw new IllegalArgumentException("API Key missing!");
         return new Client().builder().apiKey(apiKey).build();
     }
 
